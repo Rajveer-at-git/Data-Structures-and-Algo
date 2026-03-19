@@ -4,43 +4,6 @@
 
 int front = -1, rear = -1, Queue[MAX];
 
-void insert();
-void delete();
-void print();
-
-int main()
-{
-    int ch;
-    while(1)
-    {
-        printf("\n   Circular Queue");
-        printf("\n1. Insert into Queue");
-        printf("\n2. Delete from the Queue");
-        printf("\n3. Print the Contents of the Queue");
-        printf("\n4. Exit");
-        printf("\nEnter the choice: ");
-        scanf("%d", &ch);
-
-        switch(ch)
-        {
-            case 1:
-                insert();
-                break;
-            case 2:
-                delete();
-                break;
-            case 3:
-                print();
-                break;
-            case 4:
-                exit(0);
-            default:
-                printf("Invalid choice\n");
-        }
-    }
-    return 0;
-}
-
 void insert()
 {
     int item;
@@ -82,6 +45,7 @@ void delete()
     }
 }
 
+
 void print()
 {
     if(front == -1)
@@ -99,3 +63,38 @@ void print()
         i = (i + 1) % MAX;
     }
 }
+
+int main()
+{
+    int ch;
+    while(1)
+    {
+        printf("\n   Circular Queue");
+        printf("\n1. Insert into Queue");
+        printf("\n2. Delete from the Queue");
+        printf("\n3. Print the Contents of the Queue");
+        printf("\n4. Exit");
+        printf("\nEnter the choice: ");
+        scanf("%d", &ch);
+
+        switch(ch)
+        {
+            case 1:
+                insert();
+                break;
+            case 2:
+                delete();
+                break;
+            case 3:
+                print();
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Invalid choice\n");
+        }
+    }
+    return 0;
+}
+
+
