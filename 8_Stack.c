@@ -4,9 +4,47 @@
 
 int top = -1, Stack[MAX];
 
-void push();
-void pop();
-void print();
+void push()
+{
+    int item;
+    if(top == MAX - 1)
+    {
+        printf("\nOverflow\n");
+    }
+    else
+    {
+        printf("\nEnter the element: ");
+        scanf("%d", &item);
+        top++;
+        Stack[top] = item;
+    }
+}
+
+
+void pop()
+{
+    if(top == -1)
+    {
+        printf("\nUnderflow\n");
+    }
+    else
+    {
+        printf("\n%d is Removed from Stack\n", Stack[top]);
+        top--;
+    }
+}
+
+void print()
+{
+    if(top == -1)
+    {
+        printf("\nStack is empty\n");
+        return;
+    }
+    printf("\nThe contents of the stack are:\n");
+    for(int i = top; i >= 0; i--)
+        printf("%d\n", Stack[i]);
+}
 
 int main()
 {
@@ -41,43 +79,6 @@ int main()
     return 0;
 }
 
-void push()
-{
-    int item;
-    if(top == MAX - 1)
-    {
-        printf("\nOverflow\n");
-    }
-    else
-    {
-        printf("\nEnter the element: ");
-        scanf("%d", &item);
-        top++;
-        Stack[top] = item;
-    }
-}
 
-void pop()
-{
-    if(top == -1)
-    {
-        printf("\nUnderflow\n");
-    }
-    else
-    {
-        printf("\n%d is Removed from Stack\n", Stack[top]);
-        top--;
-    }
-}
 
-void print()
-{
-    if(top == -1)
-    {
-        printf("\nStack is empty\n");
-        return;
-    }
-    printf("\nThe contents of the stack are:\n");
-    for(int i = top; i >= 0; i--)
-        printf("%d\n", Stack[i]);
-}
+
