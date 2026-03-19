@@ -34,23 +34,17 @@ void inputArray(int A[], int n)
 
 void SelectionSort(int A[], int n)
 {
-    int Min, loc;
-    for (int k = 0; k < n - 1; k++)
+    for(int i=0;i<n-1;i++)
     {
-        loc = k;
-        Min = A[k];
-        for (int j = k + 1; j < n; j++)
+        int Min = i;
+        for(int j=i+1;j<=n-1;j++)
         {
-            if (A[j] < Min)
-            {
-                Min = A[j];
-                loc = j;
-            }
+            if(A[j] < A[Min])
+                Min = j;
         }
-        // Swap A[k] and A[loc]
-        int temp = A[k];
-        A[k] = A[loc];
-        A[loc] = temp;
+        int temp = A[i];
+        A[i] = A[Min];
+        A[Min] = temp;
     }
     printf("List: \n");
     for (int i; i < n; i++)
